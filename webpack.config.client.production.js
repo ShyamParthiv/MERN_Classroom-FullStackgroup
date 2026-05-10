@@ -4,7 +4,7 @@ const CURRENT_WORKING_DIR = process.cwd()
 const config = {
     mode: "production",
     entry: [
-        path.join(CURRENT_WORKING_DIR, 'client/main.js')
+        path.join(CURRENT_WORKING_DIR, 'frontend/client/main.js')
     ],
     output: {
         path: path.join(CURRENT_WORKING_DIR , '/dist'),
@@ -16,9 +16,12 @@ const config = {
             {
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
-                use: [
-                    'babel-loader'
-                ]
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env', '@babel/preset-react']
+                    }
+                }
             },
             {
                 test: /\.(ttf|eot|svg|gif|jpg|png)(\?[\s\S]+)?$/,
