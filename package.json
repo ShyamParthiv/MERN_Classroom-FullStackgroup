@@ -23,8 +23,8 @@
     "start": "node -e \"process.env.NODE_ENV='production'; require('./dist/server.generated.js')\""
   },
   "engines": {
-    "node": ">=24.13.0",
-    "npm": ">=11.6.2"
+    "node": "22.x",
+    "npm": "10.x"
   },
   "devDependencies": {
     "@babel/core": "7.9.0",
@@ -37,7 +37,7 @@
     "webpack-cli": "^5.1.4",
     "webpack-dev-middleware": "^7.4.5",
     "webpack-hot-middleware": "^2.26.1",
-    "webpack-node-externals": "1.7.2"
+    "webpack-node-externals": "^3.0.0"
   },
   "dependencies": {
     "@hot-loader/react-dom": "16.13.0",
